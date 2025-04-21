@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import ImageGenerator from './components/ImageGenerator';
+import ChatComponent from './components/ChatComponent';
+import RecipeGenerator from './components/RecipeGenerator';
 
 function App() {
   const [activeTab, setActiveTab] = useState('image-generator');
@@ -16,7 +19,7 @@ function App() {
         </button>
       <button  className={activeTab === 'chat' ? 'active' : ''}
       onClick={() => handleTabChange('chat')}>
-        Ask AI
+        Chat
         </button>
       <button className={activeTab === 'recipe-generator' ? 'active' : ''}
       onClick={() => handleTabChange('recipe-generator')}>
@@ -24,9 +27,9 @@ function App() {
         </button>
     
       <div>
-        {activeTab === 'image-generator' && <h2>Image Generator</h2>}
-        {activeTab === 'chat' && <h2>Chat</h2>}
-        {activeTab === 'recipe-generator' && <h2>Recipe Generator</h2>}
+        {activeTab === 'image-generator' && <ImageGenerator/>}
+        {activeTab === 'chat' && <ChatComponent />}
+        {activeTab === 'recipe-generator' && <RecipeGenerator />}
       </div>
     </div>
   );
