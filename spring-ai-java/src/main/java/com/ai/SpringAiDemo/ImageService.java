@@ -24,11 +24,11 @@ public class ImageService {
         return openAiImageModel.call(
                 new ImagePrompt(prompt,
                         OpenAiImageOptions.builder()
-                                .withModel("dall-e-2")
-                                .withQuality(quality)
-                                .withN(n)
-                                .withHeight(height)
-                                .withWidth(width).build())
+                                .model("dall-e-2")
+                                .quality(quality)
+                                .N(n)
+                                .height(height)
+                                .width(width).build())
         );
     }
 }
