@@ -16,7 +16,6 @@ public class ImageService {
 
 
     public ImageResponse generateImage(String prompt,
-                                       String quality,
                                        int n,
                                        int width,
                                        int height){
@@ -25,7 +24,6 @@ public class ImageService {
                 new ImagePrompt(prompt,
                         OpenAiImageOptions.builder()
                                 .model("dall-e-2")
-                                .quality(quality)
                                 .N(n)
                                 .height(height)
                                 .width(width).build())
